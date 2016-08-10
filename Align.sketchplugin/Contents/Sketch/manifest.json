@@ -1,0 +1,30 @@
+{
+  "author" : "Richard Gazdik",
+  "commands" : [
+    {
+      "script" : "alignsymbols.cocoascript",
+      "name" : "Align Symbols",
+      "handler" : "onRun",
+      "identifier" : "alignSymbols"
+    },
+    {
+      "script" : "alignartboards.cocoascript",
+      "name" : "Align Artboards",
+      "handler" : "onRun",
+      "identifier" : "alignArtboards"
+    }
+  ],
+  "menu" : {
+    "items" : [
+      "alignSymbols",
+      "alignArtboards"
+
+    ],
+    "title" : "Align"
+  },
+  "identifier" : "com.example.sketch.93870ddc-5ab9-4ef2-8e5e-bd187076f3cf",
+  "version" : "0.7.0",
+  "description" : "Group and align your symbols and artboards by name",
+  "authorEmail" : "richard@gazdik.name",
+  "name" : "Align"
+}

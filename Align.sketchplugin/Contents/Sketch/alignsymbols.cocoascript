@@ -1,0 +1,44 @@
+var onRun = function(context) {
+  var maxWidth = 0
+  var groupName = null
+  var tY = 0
+  var tX = 0
+  var doc = context.document
+  var i = 0
+  var layers = null
+  var layersMeta = []
+
+  do {
+    doc.pages()[i].name() == "Symbols" ? layers = doc.pages()[i].layers() : i++
+  }
+  while (i < doc.pages().length && layers == null)
+
+  for (i = 0; i < layers.length; i++) {
+      var layer = layers[i]
+      layersMeta.push({
+          name: layer.name(),
+          layer: layer
+      });
+  }
+
+  layersMeta.sort(function(a, b) {
+      if(a.name < b.name) return -1
+      if(a.name > b.name) return 1
+      return 0
+  });
+
+  for(i=0; i < layersMeta.length; i++){
+      var l = layersMeta[i];
+      var layerGroupName = l.name.split("/")[0]
+      if (groupName != layerGroupName) {
+          groupName = layerGroupName
+          tX = i > 0 ? tX + maxWidth + 200 : 0;
+          tY = 0;
+          maxWidth = 0;
+      }
+      l.layer.frame().x = tX
+      l.layer.frame().y = tY
+      tY += l.layer.frame().height() + 50;
+      maxWidth = l.layer.frame().width() > maxWidth ? l.layer.frame().width() : maxWidth
+  }
+}

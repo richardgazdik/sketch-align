@@ -13,7 +13,7 @@ In the example below: the artboards with the same prefix (*'Note-'*, *'Notebook-
 <img src="group-artboards.png" alt="Align Artboards" width="574">
 
 ##Align Symbols
-Visually groups all symbols on the 'Symbols' page based on the layer's name and Sketch's default symbol foldering method. (You can organize your symbols to folders by including a slash “/” in their name.)
+Visually groups all your symbols on the recently introduced 'Symbols' page based on the symbol's name and Sketch's default symbol foldering method. (You can organize your symbols to folders by including a slash “/” in their name.)
 Based on the first folder name, the plugin visually organizes all your symbols to columns and adds an extra 200px right padding after each column.
 
 <img src="group-symbols.png" alt="Align Symbols" width="396">
